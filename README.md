@@ -80,11 +80,13 @@ Tashia is romanceable, and the mod spans both Shadows of Amn and Throne of Bhaal
 **WeiDU coding**  
 
 - Lord Ernie (Bert Van Hertum) &nbsp;&ndash;&nbsp; Tashia Remix
-- cmorgan &nbsp;&ndash;&nbsp; Tashia Remix v1.1
+- cmorgan &nbsp;&ndash;&nbsp; Tashia Remix (version 1.1)
 
 **Contributors**  
 
-- White Agnus and Leomar &nbsp;&ndash;&nbsp; v1.2 update
+- White Agnus and Leomar &nbsp;&ndash;&nbsp; mod update (version 1.2)
+- BiG World Fixpack team &nbsp;&ndash;&nbsp; bug fixes
+- skellytz &nbsp;&ndash;&nbsp; maintenance (version 1.5)
 - Sarah Hamilton &nbsp;&ndash;&nbsp; soundset (voice of April Ryan from the game *The Longest Journey* by Funcom)
 - Amalthea (Antonio Montenegro) &nbsp;&ndash;&nbsp; original portrait
 
