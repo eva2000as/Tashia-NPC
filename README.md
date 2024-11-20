@@ -84,6 +84,7 @@ Tashia is romanceable, and the mod spans both Shadows of Amn and Throne of Bhaal
 
 **Contributors**  
 
+- White Agnus and Leomar &nbsp;&ndash;&nbsp; v1.2 update
 - Sarah Hamilton &nbsp;&ndash;&nbsp; soundset (voice of April Ryan from the game *The Longest Journey* by Funcom)
 - Amalthea (Antonio Montenegro) &nbsp;&ndash;&nbsp; original portrait
 
