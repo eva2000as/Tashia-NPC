@@ -42,10 +42,10 @@ Tashia is romanceable, and the mod spans both Shadows of Amn and Throne of Bhaal
 
 ## Tashia
 
-> At the sound of me,<br>
-> men may dream or stamp their feet.<br>
-> At the sound of me,<br>
-> women may laugh or sometimes weep
+> At the sound of me, men may dream<br>
+> or stamp their feet<br>
+> At the sound of me, women may laugh<br>
+> or sometimes weep
 
 <br>
 
