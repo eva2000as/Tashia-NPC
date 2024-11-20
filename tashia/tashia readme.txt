@@ -3,18 +3,31 @@
 *** Unrar everything into your Baldur's Gate 2 folder.
 *** Make sure you do it with "include folder names" option turned on.
 *** To install the mod, run "Setup-Tashia.exe" and follow instructions. 
-	The first option is to install the ToB version (required for the expansion) or just the SoA version
-	Then, if you've installed the ToB version, you can choose between the full action dialogues, or the Baldurized version (see below).
+    The first option is to install the ToB version (required for the expansion) or just the SoA version.
+    Then, if you've installed the ToB version, you can choose between the full action dialogues,
+    or the Baldurized version (see below).
 *** To uninstall in the future, run "Setup-Tashia.exe" again.
 
 You can find Tashia in the Trademeet tavern.
 
 Visit the website for all the latest updates.
 
+
+Remix Version v1.2 (01 April 2010)
+- Lollorian's corrected GLOBAL typos - LE#TashiaA.d, LE#TashiaN.d
+- Lollorian's OR() fixes - LE#Tashia.baf, LE#TashiaN.baf
+- Traified correctly dialogues\taflirt.d
+- Added AUTO_TRA command to the TP2
+- Removed music.exe and added oggdec.exe with Tashia's soundfiles as oggs
+- Moved Setup-Tashia.tp2 into the mod folder
+- Updated to WeiDU v215
+
+
 Original Mod's author: Michael "Arian" Lyashenko	
 Tashia Remix author: 	Bri
 Tashia Remix coder: 	Bert "Lord Ernie" Van Hertum
 v1.1 Update coder:	cmorgan
+v1.2 update:            White Agnus and Leomar (BiG World Project)
 Sound set author:     	Sarah Hamilton (voice of April Ryan from the game
                       	"The Longest Journey" by Funcom)
 Music - 'sad' song:  	 "Under the Oaks" by Elven (www.mp3.com/elven)
@@ -22,9 +35,13 @@ Music - 'happy' song: 	"Drum, Pipe and Dance" by Elven (www.mp3.com/elven)
 Portrait's author:   	 Antonio Montenegro (amalthea@chello.be)
 Mod forums:		http://forums.spellholdstudios.net/index.php?showforum=10
 
+
 ------------------- Changes from the original (POSSIBLE SPOILERS) -----------------------
 
-The first thing you will notice is that much of Arian's Tashia has remained unchanged in our Remix version. That said, there are a number of changes we have incorporated. Note, if you have never played Tashia before, you may wish to skip this section since some of it is spoiler-ish in nature.
+The first thing you will notice is that much of Arian's Tashia has remained unchanged in our Remix version.
+That said, there are a number of changes we have incorporated.
+Note, if you have never played Tashia before, you may wish to skip this section since some of it is spoiler-ish
+in nature.
 
 
 1. Changes are for both Shadows of Amn, and Throne of Bhaal. You won't have to wait 6 months for the next module.
@@ -52,6 +69,7 @@ However, we also realized that delivery can be off-putting to those who wish the
 11. Most items in the final, Arilistan battle have been made undroppable to remove the 'Monty Haul' aspect of that encounter.
 
 12. We are including a few new pictures you may wish to use for Tashia. However, the original picture of Tashia is still the default.
+
 
 
 ------------------- Special Thanks and Acknowledgments -----------------------

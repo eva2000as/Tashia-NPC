@@ -225,7 +225,7 @@ END
    // StrongHoldless ones: Monk, Barbarian, Sorcerer
 IF
   InParty(Myself)
-  OR(3)
+  OR(2)
        Class(Player1,MONK)
        Class(Player1,SORCERER)
        !OR(2)

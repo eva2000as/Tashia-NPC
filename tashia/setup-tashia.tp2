@@ -18,13 +18,14 @@ ALLOW_MISSING ~fatesp.dlg~
               ~ar4500.bcs~
               ~ar6200.bcs~
 
-//MODDER
+// MODDER
 
-VERSION ~v1.1~
+VERSION ~v1.2~
 
 README ~Tashia\Readme.htm~
 
 // Translation
+AUTO_TRA ~Tashia\%s~
 LANGUAGE ~American English~
          ~american~
          ~tashia/american/wsetup.tra~
@@ -34,7 +35,7 @@ LANGUAGE ~Francais (traduction de Yoho)~
          ~french~
          ~tashia/american/wsetup.tra~
          ~tashia/french/wsetup.tra~
-LANGUAGE ~Deusch (Uebersetzung von maus)~
+LANGUAGE ~Deutsch (Uebersetzung von Maus)~
          ~deutsch~
          ~tashia/deutsch/wsetup.tra~
 LANGUAGE ~Espanol (Traducido por el Clan DLAN)~
@@ -54,7 +55,7 @@ APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
   UNLESS ~CD_STATE_NOTVALID~
 
 
-// Voraussetzungen für die Installation
+// Impotant things for the installation
 
 // Copy creatures and assign proper strings
 COPY ~tashia/Creatures/tashia.cre~ ~override/tashia.cre~
@@ -833,4 +834,3 @@ SUBCOMPONENT @318
 COPY ~Tashia\update\Portraits\Alternative 2\TashiaM.bmp~ ~override\TashiaM.bmp~
 COPY ~Tashia\update\Portraits\Alternative 2\TashiaL.bmp~ ~override\TashiaL.bmp~
 COPY ~Tashia\update\Portraits\Alternative 2\TashiaS.bmp~ ~override\TashiaS.bmp~
-

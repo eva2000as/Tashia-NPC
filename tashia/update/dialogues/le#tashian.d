@@ -834,7 +834,7 @@ APPEND BTASHIA
   END
 
 	// Paladin
-  IF ~AreaCheck("AR0903") GlobalGT("PaladinOrder","GLOBALS",0) Global("LE#TashiaClassLoveTalk","GLOBAL",1)~ THEN BEGIN LE#TashiaPalTalk
+  IF ~AreaCheck("AR0903") GlobalGT("PaladinOrder","GLOBAL",0) Global("LE#TashiaClassLoveTalk","GLOBAL",1)~ THEN BEGIN LE#TashiaPalTalk
      SAY @335
      IF ~~ THEN REPLY @336 DO ~SetGlobal("LE#TashiaClassLoveTalk","GLOBAL",2)~ GOTO LE#TashiaPalTalkA
      IF ~~ THEN REPLY @337 DO ~SetGlobal("LE#TashiaClassLoveTalk","GLOBAL",2)~ GOTO LE#TashiaPalTalkB

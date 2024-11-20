@@ -177,7 +177,7 @@ IF
   CombatCounter(0)
   !StateCheck("Tashia",CD_STATE_NOTVALID)
   !See([ENEMY])
-  OR(4)
+  OR(2)
     Global("LoveTalk","LOCALS",57)
     Global("LoveTalk","LOCALS",59)
 THEN
@@ -249,7 +249,7 @@ END
    // StrongHoldless ones: Monk, Barbarian, Sorcerer
 IF
   InParty(Myself)
-  OR(3)
+  OR(2)
        Class(Player1,MONK)
        Class(Player1,SORCERER)
        !OR(2)
