@@ -50,68 +50,7 @@ LANGUAGE ~Italiano (by al17 e Hellspawn, http://rtt.altervista.org)~
 BEGIN @0
 SUBCOMPONENT @303
 
-/* sound references */
-
-// AT_EXIT ~tashia\extract.bat~ // old sound disabled
-
-ACTION_CLEAR_ARRAY ~sounds~
-ACTION_DEFINE_ARRAY ~sounds~ BEGIN
-  ~c-aranft~
-  ~tashia0~
-  ~tashia2~
-  ~tashia3~
-  ~tashia4~
-  ~tashia5~
-  ~tashia6~
-  ~tashiaa~
-  ~tashiab~
-  ~tashiac~
-  ~tashiad~
-  ~tashiae~
-  ~tashiaf~
-  ~tashiag~
-  ~tashiah~
-  ~tashiai~
-  ~tashiaj~
-  ~tashiak~
-  ~tashial~
-  ~tashiam~
-  ~tashiam1~
-  ~tashiam2~
-  ~tashian~
-  ~tashiao~
-  ~tashiap~
-  ~tashiaq~
-  ~tashiar~
-  ~tashias~
-  ~tashiat~
-  ~tashiau~
-  ~tashiav~
-  ~tashiaw~
-  ~tashiax~
-  ~tashiay~
-  ~tashiaz~
-  ~tashia_~
-  ~taundies~
-END
-
-COPY ~tashia/media/convert_win.bat~ ~tashia/ogg/tashiawinaudio.bat~
-/* check for a sound and see if it already has been decompressed. If not, add it to the list. */
-ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
-  ACTION_IF (NOT FILE_EXISTS ~tashia/ogg/%sound%.wav~) BEGIN
-    COPY ~tashia/ogg/null.wav~ ~tashia/ogg/%sound%.wav~ 
-    APPEND_OUTER ~tashia/ogg/tashiawinaudio.bat~ ~oggdec "%sound%.ogg"~
-  END
-END
-/* run the resulting .ogg conversion file */
-AT_NOW ~"tashia/ogg/tashiawinaudio.bat"~
-
-/* look for the resulting .wav files and copy them into the game */
-ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
-  ACTION_IF (NOT FILE_EXISTS_IN_GAME ~%sound%.wav~) BEGIN
-    MOVE ~tashia/ogg/%sound%.wav~ ~override~ 
-  END
-END  
+LAF HANDLE_AUDIO END
 
 APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
   ~0x80101FEF CD_STATE_NOTVALID~
@@ -220,10 +159,17 @@ COPY ~tashia/Items/tafamclw.itm~ ~override/tafamclw.itm~
 
 // Copy files
 COPY ~tashia/Media/tafamil.eff~  ~override/tafamil.eff~
-     ~tashia/Media/tashiaS.bmp~  ~override/tashiaS.bmp~
-     ~tashia/Media/tashiaM.bmp~  ~override/tashiaM.bmp~
-     ~tashia/Media/tashiaL.bmp~  ~override/tashiaL.bmp~
      ~tashia/Media/j#blank.mus~  ~music/j#blank.mus~
+
+ACTION_IF GAME_IS BG2EE BEGIN
+COPY ~tashia/Media/bg2/tashiaS.bmp~  ~override/tashiaS.bmp~
+     ~tashia/Media/bg2/tashiaM.bmp~  ~override/tashiaM.bmp~
+     ~tashia/Media/bg2/tashiaL.bmp~  ~override/tashiaL.bmp~
+END ELSE BEGIN
+COPY ~tashia/Media/ee/tashiaS.bmp~  ~override/tashiaS.bmp~
+     ~tashia/Media/ee/tashiaM.bmp~  ~override/tashiaM.bmp~
+     ~tashia/Media/ee/tashiaL.bmp~  ~override/tashiaL.bmp~
+END
 
 // Compile scripts
 COMPILE ~tashia/Scripts/taarilis.baf~
@@ -374,64 +320,7 @@ SUBCOMPONENT @303
 
 /* sound references */
 
-ACTION_CLEAR_ARRAY ~sounds~
-ACTION_DEFINE_ARRAY ~sounds~ BEGIN
-  ~c-aranft~
-  ~tashia0~
-  ~tashia2~
-  ~tashia3~
-  ~tashia4~
-  ~tashia5~
-  ~tashia6~
-  ~tashiaa~
-  ~tashiab~
-  ~tashiac~
-  ~tashiad~
-  ~tashiae~
-  ~tashiaf~
-  ~tashiag~
-  ~tashiah~
-  ~tashiai~
-  ~tashiaj~
-  ~tashiak~
-  ~tashial~
-  ~tashiam~
-  ~tashiam1~
-  ~tashiam2~
-  ~tashian~
-  ~tashiao~
-  ~tashiap~
-  ~tashiaq~
-  ~tashiar~
-  ~tashias~
-  ~tashiat~
-  ~tashiau~
-  ~tashiav~
-  ~tashiaw~
-  ~tashiax~
-  ~tashiay~
-  ~tashiaz~
-  ~tashia_~
-  ~taundies~
-END
-
-COPY ~tashia/media/convert_win.bat~ ~tashia/ogg/tashiawinaudio.bat~
-/* check for a sound and see if it already has been decompressed. If not, add it to the list. */
-ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
-  ACTION_IF (NOT FILE_EXISTS ~tashia/ogg/%sound%.wav~) BEGIN
-    COPY ~tashia/ogg/null.wav~ ~tashia/ogg/%sound%.wav~ 
-    APPEND_OUTER ~tashia/ogg/tashiawinaudio.bat~ ~oggdec "%sound%.ogg"~
-  END
-END
-/* run the resulting .ogg conversion file */
-AT_NOW ~"tashia/ogg/tashiawinaudio.bat"~
-
-/* look for the resulting .wav files and copy them into the game */
-ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
-  ACTION_IF (NOT FILE_EXISTS_IN_GAME ~%sound%.wav~) BEGIN
-    MOVE ~tashia/ogg/%sound%.wav~ ~override~ 
-  END
-END  
+LAF HANDLE_AUDIO END
 
 // adds custom IsValidForPartyDialogue state
 APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
@@ -538,10 +427,17 @@ COPY ~tashia/Items/tafamclw.itm~ ~override/tafamclw.itm~
 
 // Copy files
 COPY ~tashia/Media/tafamil.eff~  ~override/tafamil.eff~
-     ~tashia/Media/tashiaS.bmp~  ~override/tashiaS.bmp~
-     ~tashia/Media/tashiaM.bmp~  ~override/tashiaM.bmp~
-     ~tashia/Media/tashiaL.bmp~  ~override/tashiaL.bmp~
      ~tashia/Media/j#blank.mus~  ~music/j#blank.mus~
+     
+ACTION_IF GAME_IS ~bg2ee~ BEGIN
+COPY ~tashia/Media/ee/tashiaS.bmp~  ~override/tashiaS.bmp~
+     ~tashia/Media/ee/tashiaM.bmp~  ~override/tashiaM.bmp~
+     ~tashia/Media/ee/tashiaL.bmp~  ~override/tashiaL.bmp~
+END ELSE BEGIN
+COPY ~tashia/Media/bg2/tashiaS.bmp~  ~override/tashiaS.bmp~
+     ~tashia/Media/bg2/tashiaM.bmp~  ~override/tashiaM.bmp~
+     ~tashia/Media/bg2/tashiaL.bmp~  ~override/tashiaL.bmp~
+END
 
 // Compile scripts
 COMPILE ~tashia/Scripts/taarilis.baf~
@@ -674,6 +570,8 @@ REQUIRE_COMPONENT ~setup-tashia.tp2~ ~0~ @312
 COMPILE ~Tashia\update\dialogues\LE#TashiaA.d~
 USING ~Tashia\update\%s\LE#TashiaA.tra~
 
+ADD_JOURNAL EXISTING TITLE (#74337) @0 @1 @2 USING ~Tashia\update\%s\LE#TashiaA.tra~
+
 COMPILE ~Tashia\update\dialogues\LE#Tash25A.d~
 USING ~Tashia\update\%s\LE#Tash25A.tra~
 
@@ -792,6 +690,8 @@ REQUIRE_COMPONENT ~Setup-Tashia.tp2~ ~0~ @312
 
 COMPILE ~Tashia\update\dialogues\LE#TashiaN.d~
 USING ~Tashia\update\%s\LE#TashiaN.tra~
+
+ADD_JOURNAL EXISTING TITLE (#74337) @0 @1 @2 USING ~Tashia\update\%s\LE#TashiaN.tra~
 
 COMPILE ~Tashia\update\dialogues\LE#Tashia25N.d~
 USING ~Tashia\update\%s\LE#Tashia25N.tra~
