@@ -20,16 +20,15 @@ ALLOW_MISSING ~fatesp.dlg~
 
 // MODDER
 
-VERSION ~v1.2~
+VERSION ~v1.3~
 
-README ~Tashia\Readme.htm~
+README ~tashia\readme.htm~
 
 // Translation
-AUTO_TRA ~Tashia\%s~
+AUTO_TRA ~tashia\%s~
 LANGUAGE ~American English~
          ~american~
          ~tashia/american/wsetup.tra~
-
 /*
 LANGUAGE ~Francais (traduction de Yoho)~
          ~french~
@@ -44,16 +43,79 @@ LANGUAGE ~Espanol (Traducido por el Clan DLAN)~
 LANGUAGE ~Italiano (by al17 e Hellspawn, http://rtt.altervista.org)~
          ~italian~
          ~tashia/italian/wsetup.tra~
-  */
+*/
+
+
 // Installation
 BEGIN @0
 SUBCOMPONENT @303
-AT_EXIT ~tashia\extract.bat~
+
+/* sound references */
+
+// AT_EXIT ~tashia\extract.bat~ // old sound disabled
+
+ACTION_CLEAR_ARRAY ~sounds~
+ACTION_DEFINE_ARRAY ~sounds~ BEGIN
+  ~c-aranft~
+  ~tashia0~
+  ~tashia2~
+  ~tashia3~
+  ~tashia4~
+  ~tashia5~
+  ~tashia6~
+  ~tashiaa~
+  ~tashiab~
+  ~tashiac~
+  ~tashiad~
+  ~tashiae~
+  ~tashiaf~
+  ~tashiag~
+  ~tashiah~
+  ~tashiai~
+  ~tashiaj~
+  ~tashiak~
+  ~tashial~
+  ~tashiam~
+  ~tashiam1~
+  ~tashiam2~
+  ~tashian~
+  ~tashiao~
+  ~tashiap~
+  ~tashiaq~
+  ~tashiar~
+  ~tashias~
+  ~tashiat~
+  ~tashiau~
+  ~tashiav~
+  ~tashiaw~
+  ~tashiax~
+  ~tashiay~
+  ~tashiaz~
+  ~tashia_~
+  ~taundies~
+END
+
+COPY ~tashia/media/convert_win.bat~ ~tashia/ogg/tashiawinaudio.bat~
+/* check for a sound and see if it already has been decompressed. If not, add it to the list. */
+ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
+  ACTION_IF (NOT FILE_EXISTS ~tashia/ogg/%sound%.wav~) BEGIN
+    COPY ~tashia/ogg/null.wav~ ~tashia/ogg/%sound%.wav~ 
+    APPEND_OUTER ~tashia/ogg/tashiawinaudio.bat~ ~oggdec "%sound%.ogg"~
+  END
+END
+/* run the resulting .ogg conversion file */
+AT_NOW ~"tashia/ogg/tashiawinaudio.bat"~
+
+/* look for the resulting .wav files and copy them into the game */
+ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
+  ACTION_IF (NOT FILE_EXISTS_IN_GAME ~%sound%.wav~) BEGIN
+    MOVE ~tashia/ogg/%sound%.wav~ ~override~ 
+  END
+END  
 
 APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
   ~0x80101FEF CD_STATE_NOTVALID~
   UNLESS ~CD_STATE_NOTVALID~
-
 
 // Impotant things for the installation
 
@@ -165,111 +227,96 @@ COPY ~tashia/Media/tafamil.eff~  ~override/tafamil.eff~
 
 // Compile scripts
 COMPILE ~tashia/Scripts/taarilis.baf~
-USING ~~
+  USING ~~
 
 COMPILE ~tashia/Scripts/tadream.baf~
-USING ~~
+  USING ~~
 
 COMPILE ~tashia/Scripts/tafamil.baf~
-USING ~tashia/%s/wsetup.tra~
+  USING ~tashia/%s/wsetup.tra~
 
 COMPILE ~tashia/Scripts/tash25.baf~
-USING ~tashia/%s/wsetup.tra~
+  USING ~tashia/%s/wsetup.tra~
 
 COMPILE ~tashia/Scripts/tashi25d.baf~
-USING ~~
+  USING ~~
 
 COMPILE ~tashia/Scripts/tashia.baf~
-USING ~tashia/%s/wsetup.tra~
+  USING ~tashia/%s/wsetup.tra~
 
 COMPILE ~tashia/Scripts/cuttas01.baf~
-USING ~tashia/%s/wsetup.tra~
+  USING ~tashia/%s/wsetup.tra~
 
 COMPILE ~tashia/Scripts/cuttas02.baf~
-USING ~tashia/%s/wsetup.tra~
+  USING ~tashia/%s/wsetup.tra~
 
 COMPILE ~tashia/Scripts/cuttas03.baf~
-USING ~tashia/%s/wsetup.tra~
+  USING ~tashia/%s/wsetup.tra~
 
 COMPILE ~tashia/Scripts/cuttas04.baf~
-USING ~~
+  USING ~~
 
 COMPILE ~tashia/Scripts/cuttas05.baf~
-USING ~tashia/%s/wsetup.tra~
+  USING ~tashia/%s/wsetup.tra~
 
 COMPILE ~tashia/Scripts/cuttas06.baf~
-USING ~~
+  USING ~~
 
 COPY_EXISTING ~AR2602.are~ ~override~
  WRITE_ASCII 0x94 ~AR2602~
 BUT_ONLY_IF_IT_CHANGES
 
 COMPILE ~tashia/Scripts/ar2602.baf~
-USING ~~
+  USING ~~
 
 COMPILE ~tashia/Scripts/tfix.baf~
-USING ~tashia/%s/wsetup.tra~
+  USING ~tashia/%s/wsetup.tra~
 
 // Compile dialogs
 COMPILE ~tashia/Dialogues/taevil.d~
-USING  // ~tashia/american/taevil.tra~
-      ~tashia/%s/taevil.tra~
+  USING  ~tashia/%s/taevil.tra~
 
 COMPILE ~tashia/Dialogues/tashia.d~
-USING // ~tashia/american/tashia.tra~
-      ~tashia/%s/tashia.tra~
+  USING  ~tashia/%s/tashia.tra~
 
 COMPILE ~tashia/Dialogues/tashiaj.d~
-USING // ~tashia/american/tashiaj.tra~
-      ~tashia/%s/tashiaj.tra~
+  USING  ~tashia/%s/tashiaj.tra~
 
 COMPILE ~tashia/Dialogues/tashiap.d~
-USING // ~tashia/american/tashiap.tra~
-      ~tashia/%s/tashiap.tra~
+  USING ~tashia/%s/tashiap.tra~
 
 COMPILE ~tashia/Dialogues/btashia.d~
-USING // ~tashia/american/btashia.tra~
-      ~tashia/%s/btashia.tra~
+  USING ~tashia/%s/btashia.tra~
 
 COMPILE ~tashia/Dialogues/tajarmis.d~
-USING // ~tashia/american/tajarmis.tra~
-      ~tashia/%s/tajarmis.tra~
+  USING   ~tashia/%s/tajarmis.tra~
 
 COMPILE ~tashia/Dialogues/taarilis.d~
-USING // ~tashia/american/taarilis.tra~
-      ~tashia/%s/taarilis.tra~
+  USING  ~tashia/%s/taarilis.tra~
 
 COMPILE ~tashia/Dialogues/tadream.d~
-USING // ~tashia/american/tadream.tra~
-      ~tashia/%s/tadream.tra~
+  USING ~tashia/%s/tadream.tra~
 
 COMPILE ~tashia/Dialogues/takomt.d~
-USING // ~tashia/american/takomt.tra~
-      ~tashia/%s/takomt.tra~
+  USING ~tashia/%s/takomt.tra~
 
 COMPILE ~tashia/Dialogues/tafamil.d~
-USING // ~tashia/american/tafamil.tra~
-      ~tashia/%s/tafamil.tra~
+  USING  ~tashia/%s/tafamil.tra~
 
 COMPILE ~tashia/Dialogues/btashi25.d~
-USING // ~tashia/american/btashi25.tra~
-      ~tashia/%s/btashi25.tra~
+  USING  ~tashia/%s/btashi25.tra~
 
 COMPILE ~tashia/Dialogues/tashi25j.d~
-USING // ~tashia/american/tashi25j.tra~
-      ~tashia/%s/tashi25j.tra~
+  USING ~tashia/%s/tashi25j.tra~
 
 COMPILE ~tashia/Dialogues/tashi25p.d~
-USING // ~tashia/american/tashi25p.tra~
-      ~tashia/%s/tashi25p.tra~
+  USING ~tashia/%s/tashi25p.tra~
 
 COMPILE ~tashia/Dialogues/tmother.d~
-USING // ~tashia/american/tmother.tra~
-      ~tashia/%s/tmother.tra~
+  USING ~tashia/%s/tmother.tra~
 
 COMPILE ~tashia/Dialogues/taflirt.d~
-USING // ~tashia/american/taflirt.tra~
-      ~tashia/%s/taflirt.tra~
+  USING ~tashia/%s/taflirt.tra~
 
 // Patch StringRefs in scripts
 
@@ -279,7 +326,6 @@ COPY ~tashia/Media/tashend2.2da~ ~override/tashend2.2da~
   REPLACE ~187678~ @104
 COPY ~tashia/Media/tashend3.2da~ ~override/tashend3.2da~
   REPLACE ~187678~ @105
-
 
 // Pretend scripts
 EXTEND_TOP ~player1d.bcs~ ~tashia/Scripts/tashia1d.bcs~
@@ -325,19 +371,76 @@ APPEND ~npclvl25.2da~
 
 BEGIN @291
 SUBCOMPONENT @303
-AT_EXIT ~tashia\extract.bat~
 
-APPEND ~STATE.IDS~ // adds custom IsValidForPartyDialogue state
-  ~0x80101FEF CD_STATE_NOTVALID~
+/* sound references */
+
+ACTION_CLEAR_ARRAY ~sounds~
+ACTION_DEFINE_ARRAY ~sounds~ BEGIN
+  ~c-aranft~
+  ~tashia0~
+  ~tashia2~
+  ~tashia3~
+  ~tashia4~
+  ~tashia5~
+  ~tashia6~
+  ~tashiaa~
+  ~tashiab~
+  ~tashiac~
+  ~tashiad~
+  ~tashiae~
+  ~tashiaf~
+  ~tashiag~
+  ~tashiah~
+  ~tashiai~
+  ~tashiaj~
+  ~tashiak~
+  ~tashial~
+  ~tashiam~
+  ~tashiam1~
+  ~tashiam2~
+  ~tashian~
+  ~tashiao~
+  ~tashiap~
+  ~tashiaq~
+  ~tashiar~
+  ~tashias~
+  ~tashiat~
+  ~tashiau~
+  ~tashiav~
+  ~tashiaw~
+  ~tashiax~
+  ~tashiay~
+  ~tashiaz~
+  ~tashia_~
+  ~taundies~
+END
+
+COPY ~tashia/media/convert_win.bat~ ~tashia/ogg/tashiawinaudio.bat~
+/* check for a sound and see if it already has been decompressed. If not, add it to the list. */
+ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
+  ACTION_IF (NOT FILE_EXISTS ~tashia/ogg/%sound%.wav~) BEGIN
+    COPY ~tashia/ogg/null.wav~ ~tashia/ogg/%sound%.wav~ 
+    APPEND_OUTER ~tashia/ogg/tashiawinaudio.bat~ ~oggdec "%sound%.ogg"~
+  END
+END
+/* run the resulting .ogg conversion file */
+AT_NOW ~"tashia/ogg/tashiawinaudio.bat"~
+
+/* look for the resulting .wav files and copy them into the game */
+ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
+  ACTION_IF (NOT FILE_EXISTS_IN_GAME ~%sound%.wav~) BEGIN
+    MOVE ~tashia/ogg/%sound%.wav~ ~override~ 
+  END
+END  
+
+// adds custom IsValidForPartyDialogue state
+APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
   UNLESS ~CD_STATE_NOTVALID~
-
 
 // Voraussetzungen für die Installation
 
-APPEND ~TRIGGER.IDS~
-~0x40DB InWatchersKeep()~
-UNLESS ~0x40DB InWatchersKeep()~
-
+APPEND ~TRIGGER.IDS~ ~0x40DB InWatchersKeep()~
+  UNLESS ~0x40DB InWatchersKeep()~
 
 // Copy creatures and assign proper strings
 COPY ~tashia/Creatures/tashia.cre~ ~override/tashia.cre~
@@ -433,7 +536,6 @@ COPY ~tashia/Items/tafamclw.itm~ ~override/tafamclw.itm~
   SAY NAME1 @290
   SAY NAME2 @290
 
-
 // Copy files
 COPY ~tashia/Media/tafamil.eff~  ~override/tafamil.eff~
      ~tashia/Media/tashiaS.bmp~  ~override/tashiaS.bmp~
@@ -443,89 +545,78 @@ COPY ~tashia/Media/tafamil.eff~  ~override/tafamil.eff~
 
 // Compile scripts
 COMPILE ~tashia/Scripts/taarilis.baf~
-USING ~~
+  USING ~~
 
 COMPILE ~tashia/Scripts/tadream.baf~
-USING ~~
+  USING ~~
 
 COMPILE ~tashia/Scripts/tafamil.baf~
-USING ~tashia/%s/wsetup.tra~
+  USING ~tashia/%s/wsetup.tra~
 
 COMPILE ~tashia/Scripts/tashia.baf~
-USING ~tashia/%s/wsetup.tra~
+  USING ~tashia/%s/wsetup.tra~
 
 COMPILE ~tashia/Scripts/cuttas01.baf~
-USING ~tashia/%s/wsetup.tra~
+  USING ~tashia/%s/wsetup.tra~
 
 COMPILE ~tashia/Scripts/cuttas02.baf~
-USING ~tashia/%s/wsetup.tra~
+  USING ~tashia/%s/wsetup.tra~
 
 COMPILE ~tashia/Scripts/cuttas03.baf~
-USING ~tashia/%s/wsetup.tra~
+  USING ~tashia/%s/wsetup.tra~
 
 COMPILE ~tashia/Scripts/cuttas04.baf~
-USING ~~
+  USING ~~
 
 COMPILE ~tashia/Scripts/cuttas05.baf~
-USING ~tashia/%s/wsetup.tra~
+  USING ~tashia/%s/wsetup.tra~
 
 COMPILE ~tashia/Scripts/cuttas06.baf~
-USING ~~
+  USING ~~
 
 COPY_EXISTING ~AR2602.are~ ~override~
  WRITE_ASCII 0x94 ~AR2602~
 BUT_ONLY_IF_IT_CHANGES
 
 COMPILE ~tashia/Scripts/ar2602.baf~
-USING ~~
+  USING ~~
 
 COMPILE ~tashia/Scripts/tfix.baf~
-USING ~tashia/%s/wsetup.tra~
+  USING ~tashia/%s/wsetup.tra~
 
 // Compile dialogs
 COMPILE ~tashia/Dialogues/taevil.d~
-USING  // ~tashia/american/taevil.tra~
-      ~tashia/%s/taevil.tra~
+  USING ~tashia/%s/taevil.tra~
 
 COMPILE ~tashia/Dialogues/tashia.d~
-USING // ~tashia/american/tashia.tra~
-      ~tashia/%s/tashia.tra~
+  USING       ~tashia/%s/tashia.tra~
 
 COMPILE ~tashia/Dialogues/tashiaj.d~
-USING // ~tashia/american/tashiaj.tra~
-      ~tashia/%s/tashiaj.tra~
+  USING       ~tashia/%s/tashiaj.tra~
 
 COMPILE ~tashia/Dialogues/tashiap.d~
-USING // ~tashia/american/tashiap.tra~
-      ~tashia/%s/tashiap.tra~
+  USING       ~tashia/%s/tashiap.tra~
 
 COMPILE ~tashia/Dialogues/btashia.d~
-USING // ~tashia/american/btashia.tra~
-      ~tashia/%s/btashia.tra~
+  USING       ~tashia/%s/btashia.tra~
 
 COMPILE ~tashia/Dialogues/tajarmis.d~
-USING // ~tashia/american/tajarmis.tra~
-      ~tashia/%s/tajarmis.tra~
+   USING      ~tashia/%s/tajarmis.tra~
 
 COMPILE ~tashia/Dialogues/taarilis.d~
-USING // ~tashia/american/taarilis.tra~
-      ~tashia/%s/taarilis.tra~
+   USING      ~tashia/%s/taarilis.tra~
 
 COMPILE ~tashia/Dialogues/tadream.d~
-USING // ~tashia/american/tadream.tra~
-      ~tashia/%s/tadream.tra~
+  USING       ~tashia/%s/tadream.tra~
 
 COMPILE ~tashia/Dialogues/takomt.d~
-USING // ~tashia/american/takomt.tra~
-      ~tashia/%s/takomt.tra~
+  USING      ~tashia/%s/takomt.tra~
 
 COMPILE ~tashia/Dialogues/tafamil.d~
-USING // ~tashia/american/tafamil.tra~
-      ~tashia/%s/tafamil.tra~
+  USING       ~tashia/%s/tafamil.tra~
 
 COMPILE ~tashia/Dialogues/taflirt.d~
-USING // ~tashia/american/taflirt.tra~
-      ~tashia/%s/taflirt.tra~
+  USING     ~tashia/%s/taflirt.tra~
 
 // Patch StringRefs in scripts
 
@@ -536,14 +627,11 @@ COPY ~tashia/Media/tashend2.2da~ ~override/tashend2.2da~
 COPY ~tashia/Media/tashend3.2da~ ~override/tashend3.2da~
   REPLACE ~187678~ @105
 
-
 // Pretend scripts
 EXTEND_TOP ~player1d.bcs~ ~tashia/Scripts/tashia1d.bcs~
 EXTEND_TOP ~ar2010.bcs~ ~tashia/Scripts/tash2010.bcs~
 
-
 // Append Tashia NPC dialogs to the games 2da files
-
 
 COPY_EXISTING ~songlist.2da~ ~override~
 SET_2DA_ENTRY 0 2 3 ~J#BLANK.MUS~
@@ -567,35 +655,33 @@ APPEND ~interdia.2da~
   ~TASHIA      BTASHIA       BTASHI25~
   UNLESS ~TASHIA~
   IF ~25FILE~
-  
+
 
 APPEND ~npclevel.2da~
   ~Tashia      Tashia      Tashia      Tashia      Tashia      Tashia      Tashia     Tashia   Tashia      Tashia      Tashia      Tashia      Tashia      Tashia      Tashia      Tashia      Tashia     Tashia   Tashia   Tashia    Tashia   Tashia    Tashia   Tashia~
   UNLESS ~Tashia~
 
-
-// Tashia Remix
+/* Tashia Remix */
 
 BEGIN @301
 SUBCOMPONENT @300
-REQUIRE_COMPONENT ~Setup-Tashia.tp2~ ~0~ @312
+REQUIRE_COMPONENT ~setup-tashia.tp2~ ~0~ @312
 
 // Adding Dialogue state
-
 
 // Dialogue Files
 
 COMPILE ~Tashia\update\dialogues\LE#TashiaA.d~
-USING ~Tashia\update\american\LE#TashiaA.tra~
+USING ~Tashia\update\%s\LE#TashiaA.tra~
 
 COMPILE ~Tashia\update\dialogues\LE#Tash25A.d~
-USING ~Tashia\update\american\LE#Tash25A.tra~
+USING ~Tashia\update\%s\LE#Tash25A.tra~
 
 COMPILE ~Tashia\update\dialogues\LE#Inter.d~
-USING ~Tashia\update\american\LE#Inter.tra~
+USING ~Tashia\update\%s\LE#Inter.tra~
 
 COMPILE ~Tashia\update\dialogues\LE#Tashia25j.d~
-USING ~Tashia\update\american\LE#Tashia25j.tra~
+USING ~Tashia\update\%s\LE#Tashia25j.tra~
 
 COPY ~Tashia\update\creatures\le#Belm.cre~ ~override\le#belm.cre~
 SAY NAME1 @313
@@ -631,7 +717,7 @@ COMPILE ~Tashia\update\scripts\LE#cstb3.baf~
 COMPILE ~Tashia\update\scripts\LE#tsics.baf~
 
 // Kit Correction (needed for the Barbarian dialogue)
-COPY_EXISTING ~kit.ids~ ~override/kit.ids~
+COPY_EXISTING ~kit.ids~ ~override~
   REPLACE_TEXTUALLY ~0x40000000~ ~0x4000~ // TRUECLASS/MAGESCHOOL_GENERALIST
   REPLACE_TEXTUALLY ~0x00000040~ ~0x0040~ // MAGESCHOOL_ABJURER
   REPLACE_TEXTUALLY ~0x00000080~ ~0x0080~ // MAGESCHOOL_CONJURER
@@ -663,6 +749,7 @@ COPY_EXISTING ~kit.ids~ ~override/kit.ids~
   REPLACE_TEXTUALLY ~0x10000000~ ~0x4011~ // SHAPESHIFTER
   REPLACE_TEXTUALLY ~0x20000000~ ~0x4012~ // BEASTFRIEND
   REPLACE_TEXTUALLY ~0x00004000~ ~0x0000~ // BARBARIAN
+BUT_ONLY_IF_IT_CHANGES
 
 // Items
 COPY ~Tashia\update\Items\m#ibcclk.bam~ ~override\m#ibcclk.bam~
@@ -678,8 +765,6 @@ SAY DESC @305
 COPY ~Tashia\update\Items\le#wwclk.itm~ ~override\le#wwclk.itm~
 SAY NAME2 @306
 SAY DESC @307
-
-
 
 // Creatures
 COPY ~Tashia\update\creatures\le#aimil.cre~ ~override\le#aimil.cre~
@@ -700,23 +785,22 @@ SAY NAME2 @314
 
 BEGIN @302
 SUBCOMPONENT @300
-
+REQUIRE_COMPONENT ~Setup-Tashia.tp2~ ~0~ @312
 // Adding Dialogue state
-
 
 // Dialogue Files
 
 COMPILE ~Tashia\update\dialogues\LE#TashiaN.d~
-USING ~Tashia\update\american\LE#TashiaN.tra~
+USING ~Tashia\update\%s\LE#TashiaN.tra~
 
 COMPILE ~Tashia\update\dialogues\LE#Tashia25N.d~
-USING ~Tashia\update\american\LE#Tashia25N.tra~
+USING ~Tashia\update\%s\LE#Tashia25N.tra~
 
 COMPILE ~Tashia\update\dialogues\LE#Inter.d~
-USING ~Tashia\update\american\LE#Inter.tra~
+USING ~Tashia\update\%s\LE#Inter.tra~
 
 COMPILE ~Tashia\update\dialogues\LE#Tashia25j.d~
-USING ~Tashia\update\american\LE#Tashia25j.tra~
+USING ~Tashia\update\%s\LE#Tashia25j.tra~
 
 COPY ~Tashia\update\creatures\le#Belm.cre~ ~override\le#belm.cre~
 SAY NAME1 @313
@@ -800,8 +884,6 @@ COPY ~Tashia\update\Items\le#wwclk.itm~ ~override\le#wwclk.itm~
 SAY NAME2 @306
 SAY DESC @307
 
-
-
 // Creatures
 COPY ~Tashia\update\creatures\le#aimil.cre~ ~override\le#aimil.cre~
 SAY NAME1 @308
@@ -819,18 +901,14 @@ COPY ~Tashia\update\creatures\le#cowl.cre~ ~override\le#cowl.cre~
 SAY NAME1 @314
 SAY NAME2 @314
 
-
 BEGIN @316
 SUBCOMPONENT @318
-
-COPY ~Tashia\update\Portraits\Alternative 1\TashiaM.bmp~ ~override\TashiaM.bmp~
-COPY ~Tashia\update\Portraits\Alternative 1\TashiaL.bmp~ ~override\TashiaL.bmp~
-COPY ~Tashia\update\Portraits\Alternative 1\TashiaS.bmp~ ~override\TashiaS.bmp~
-
+COPY ~Tashia\update\Portraits\Alternative1\TashiaM.bmp~ ~override\TashiaM.bmp~
+COPY ~Tashia\update\Portraits\Alternative1\TashiaL.bmp~ ~override\TashiaL.bmp~
+COPY ~Tashia\update\Portraits\Alternative1\TashiaS.bmp~ ~override\TashiaS.bmp~
 
 BEGIN @317
 SUBCOMPONENT @318
-
-COPY ~Tashia\update\Portraits\Alternative 2\TashiaM.bmp~ ~override\TashiaM.bmp~
-COPY ~Tashia\update\Portraits\Alternative 2\TashiaL.bmp~ ~override\TashiaL.bmp~
-COPY ~Tashia\update\Portraits\Alternative 2\TashiaS.bmp~ ~override\TashiaS.bmp~
+COPY ~Tashia\update\Portraits\Alternative2\TashiaM.bmp~ ~override\TashiaM.bmp~
+COPY ~Tashia\update\Portraits\Alternative2\TashiaL.bmp~ ~override\TashiaL.bmp~
+COPY ~Tashia\update\Portraits\Alternative2\TashiaS.bmp~ ~override\TashiaS.bmp~

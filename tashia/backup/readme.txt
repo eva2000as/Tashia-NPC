@@ -1,1 +1,0 @@
-This folder is where your game's original files are be backed up, for uninstallation purposes.

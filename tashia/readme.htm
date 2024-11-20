@@ -327,12 +327,12 @@
   <body>
     <a name="top" id="top"></a>
     <div id="headerdiv-top">
-      Tashia Remix v1.1<br />
+      Tashia Remix v1.3<br />
       <span id="headerdiv-top-fw">A Spellhold Studios mod for Baldur's Gate 2: SoA/ToB</span>
     </div>
     <div id="headerdiv-middle">
       <span class="headerdiv-line">Original author: Michael "Arian" Lyashenko</span> | <span class="headerdiv-line">Remix authors: Bri and Lord Ernie</span><br />
-      <span class="headerdiv-line"><a href="http://forums.spellholdstudios.net/index.php?showforum=10" target="_blank">Mod forum</a></span> | <span class="headerdiv-line"><a href="http://tashia.spellholdstudios.net/" target="_blank">Mod homepage</a></span> | <span class="headerdiv-line">Version: Remix 1.0</span>
+      <span class="headerdiv-line"><a href="http://forums.spellholdstudios.net/index.php?showforum=10" target="_blank">Mod forum</a></span> | <span class="headerdiv-line"><a href="http://tashia.spellholdstudios.net/" target="_blank">Mod homepage</a></span> | <span class="headerdiv-line">Version: Remix 1.2</span>
     </div>
     <div id="headerdiv-bottom">
       <a href="#intro">Introduction</a> | <a href="#installation">Installation</a> | <a href="#faq">FAQ</a> | <a href="#version">Version history</a> | <a href="#credits">Credits</a>
@@ -363,18 +363,13 @@
         <h4>
           Installation
         </h4>
-        <p>
-          Just point the installer to the game's installation directory, hit install, and follow instructions.
-        </p>
-        <p>
-          If for some reason the installer does not do this automatically, run "Setup-Tashia.exe" and follow instructions.<br />
-          - The first option is to install the ToB version (required for the expansion) or just the SoA version.<br />
-          - Then, if you've installed the ToB version, you can choose between the full action dialogues, or the Baldurized version (see below). <br />
-	    - A third component is the possibility to install either one of two alternate portraits for Tashia. These can be found for your viewing pleasure in tashia\update\portraits .
-        </p>
-        <p>
-          To uninstall in the future, run "Setup-Tashia.exe" again.
-        </p>
+        <p> Unrar everything into your Baldur's Gate 2 folder. Make sure you do it with "include folder names" option turned on.</p>
+<p>To install the mod, run "setup-tashia.exe" and follow instructions: </p>
+<P> 1. The first option is to install the ToB version (required for the expansion) or just the SoA version.<br />
+2. Then, if you've installed the ToB version, you can choose between the full action dialogues, or the Baldurized version (see below).<br />
+3. A third component is the possibility to install either one of two alternate portraits for Tashia. These can be found for your viewing pleasure in tashia\update\portraits.
+</p> 
+	<p>To uninstall in the future, run "setup-tashia.exe" again.<p>    
         <address>
           <span class="address-footer-1">Tashia Remix &gt; Installation</span> <a href="#top">BACK TO TOP</a>
         </address>
@@ -386,8 +381,8 @@
         </h4>
         <p>(Possible Spoilers!)</p>
         <p>
-          <span class="faq-q">Q: Weren't there translations of Tashia in other languages?</span><br />
-          <span class="faq-a">A: Indeed there were. Unfortunately, this version Tashia is English only. Between the additional material, and the recoding, previous translations are now obsolete. If someone wishes to translate this version of Tashia, then they are welcome to do so.</span>
+          <span class="faq-q">Q: Are there translations of Tashia in other languages?</span><br />
+          <span class="faq-a">A: Indeed there are. The current version, though, does not match the original translation files. If someone wishes to translate this version of Tashia into more languages, then they are welcome to do so.</span>
         </p>
         <p>
           <span class="faq-q">Q: Where can Tashia be found?</span><br />
@@ -419,6 +414,24 @@
         <h4>
           Version History
         </h4>
+		<p class="version">Changes in Tashia Remix v1.3, 24 October 2010:</p>
+		<ul class="version-list">
+			<li>Corrected and updated Readme.htm.</li>
+			<li>Corrected missing REQUIRE_COMPONENT check on some subcomponents if the SoA version was installed</li>
+			<li>Reworked audio behaviors to make sure of a clean install/uninstall routine</li>			
+			<li>Updated to WeiDU v220</li>
+		</ul>			
+		<p class="version">Changes in Tashia Remix v1.2, 01 April 2010 (Possible Spoilers!):</p>
+		<ul class="version-list">
+			<li>submitted by White Agnus and Leomar (BiG World Project), Lollorian, and cmorgan</li>
+			<li>Lollorian's corrected GLOBAL typos - LE#TashiaA.d, LE#TashiaN.d</li>
+			<li>Lollorian's OR() fixes - LE#Tashia.baf, LE#TashiaN.baf</li>
+			<li>Traified correctly dialogues\taflirt.d</li>
+			<li>Added AUTO_TRA command to the TP2</li>
+			<li>Removed music.exe and added oggdec.exe with Tashia's soundfiles as oggs</li>		
+			<li>Moved Setup-Tashia.tp2 into the mod folder</li>
+			<li>Updated to WeiDU v215</li>
+		</ul>		
 		<p class="version">Changes in Tashia Remix v1.1 (Possible Spoilers!):</p>
 		<ul class="version-list">
 			<li>Various typo's have been fixed.</li>
@@ -438,7 +451,7 @@
           <li>Alteration of item lovetalk. There was an 'original' lovetalk in which Tashia mentions several items specifically by name...items she would have no prior knowledge of (such as the hammer Crom Fayr). This dialogue was altered to give her less of an "Out of Character" feel.</li>
           <li>There have been some changes made to the Master Wraith dialogue in Throne of Bhaal. Nothing too extensive, though.</li>
           <li>Most items in the final, Arilistan battle have been made undroppable to remove the 'Monty Haul' aspect of that encounter.</li>
-          <li>We are including a few new pictures you may wish to use for Tashia. However, the original picture of Tashia is still the default.</li>		  
+          <li>We are including a few new pictures you may wish to use for Tashia. However, the original picture of Tashia is still the default.</li>  
         </ul>
         <p class="version">Changes from version 2.05 to 2.05g:</p>
         <ul class="version-list">

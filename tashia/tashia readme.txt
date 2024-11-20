@@ -6,7 +6,7 @@
     The first option is to install the ToB version (required for the expansion) or just the SoA version.
     Then, if you've installed the ToB version, you can choose between the full action dialogues,
     or the Baldurized version (see below).
-*** To uninstall in the future, run "Setup-Tashia.exe" again.
+*** To uninstall in the future, run "setup-tashia.exe" again.
 
 You can find Tashia in the Trademeet tavern.
 
