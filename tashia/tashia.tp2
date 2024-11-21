@@ -1,7 +1,7 @@
 BACKUP ~weidu_external/tashia/backup~
 //AUTHOR ~Bert "Lord Ernie" Van Hertum (b.vanhertum@gmail.com)~
 SUPPORT ~https://github.com/Spellhold-Studios/Tashia-NPC~
-VERSION ~v1.5 RC1~
+VERSION ~v1.5~
 
 README ~tashia/tra/%LANGUAGE%/readme-tashia.html~
        ~tashia/readme-tashia.html~
