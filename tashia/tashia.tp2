@@ -98,7 +98,8 @@ LANGUAGE ~italiano (traduzione di al17 e Hellspawn)~
 
 // Installation
 BEGIN @0 LABEL ~le#-Tashia-Full~
-SUBCOMPONENT @303
+SUBCOMPONENT @303 (GAME_IS ~tob bg2ee eet~) // hide subcomponent on SoA-only
+REQUIRE_PREDICATE (GAME_IS ~soa tob bg2ee eet~) @319 // prevent component on non-BG2 games
 
 LAF HANDLE_AUDIO END
 
@@ -362,7 +363,8 @@ APPEND ~npclvl25.2da~
   UNLESS ~Tashia~
 
 BEGIN @291 LABEL ~le#-Tashia-SoA-Only~
-SUBCOMPONENT @303
+SUBCOMPONENT @303 (GAME_IS ~soa~) // hide subcomponent on ToB
+REQUIRE_PREDICATE (GAME_IS ~soa tob bg2ee eet~) @319 // prevent component on non-BG2 games
 
 /* sound references */
 
@@ -603,7 +605,8 @@ APPEND ~npclevel.2da~
 
 BEGIN @301 LABEL ~le#-Tashia-Action-Dialogues~
 SUBCOMPONENT @300
-REQUIRE_PREDICATE (MOD_IS_INSTALLED ~tashia.tp2~ (ID_OF_LABEL ~tashia.tp2~ ~le#-Tashia-Full~)) @312
+REQUIRE_PREDICATE (GAME_IS ~soa tob bg2ee eet~) @319 // prevent component on non-BG2 games
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~tashia.tp2~ (ID_OF_LABEL ~tashia.tp2~ ~le#-Tashia-Full~)) @312 // require full version
 
 // Adding Dialogue state
 
@@ -695,7 +698,8 @@ SAY NAME2 @314
 
 BEGIN @302 LABEL ~le#-Tashia-Baldurized-Dialogues~
 SUBCOMPONENT @300
-REQUIRE_PREDICATE (MOD_IS_INSTALLED ~tashia.tp2~ (ID_OF_LABEL ~tashia.tp2~ ~le#-Tashia-Full~)) @312
+REQUIRE_PREDICATE (GAME_IS ~soa tob bg2ee eet~) @319 // prevent component on non-BG2 games
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~tashia.tp2~ (ID_OF_LABEL ~tashia.tp2~ ~le#-Tashia-Full~)) @312 // require full version
 
 // Adding Dialogue state
 
@@ -787,6 +791,9 @@ SAY NAME2 @314
 
 BEGIN @316 LABEL ~le#-Tashia-Alt-Portrait-1~
 SUBCOMPONENT @318
+REQUIRE_PREDICATE (GAME_IS ~soa tob bg2ee eet~) @319 // prevent component on non-BG2 games
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~tashia.tp2~ (ID_OF_LABEL ~tashia.tp2~ ~le#-Tashia-Full~)) ||
+                  (MOD_IS_INSTALLED ~tashia.tp2~ (ID_OF_LABEL ~tashia.tp2~ ~le#-Tashia-SoA-Only~)) @320 // require main component
 
 ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
   COPY ~tashia/update/portraits/alternative1/ee~  ~override~
@@ -796,6 +803,9 @@ END
 
 BEGIN @317 LABEL ~le#-Tashia-Alt-Portrait-2~
 SUBCOMPONENT @318
+REQUIRE_PREDICATE (GAME_IS ~soa tob bg2ee eet~) @319 // prevent component on non-BG2 games
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~tashia.tp2~ (ID_OF_LABEL ~tashia.tp2~ ~le#-Tashia-Full~)) ||
+                  (MOD_IS_INSTALLED ~tashia.tp2~ (ID_OF_LABEL ~tashia.tp2~ ~le#-Tashia-SoA-Only~)) @320 // require main component
 
 ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
   COPY ~tashia/update/portraits/alternative2/ee~  ~override~

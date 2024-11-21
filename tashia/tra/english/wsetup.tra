@@ -1,4 +1,4 @@
-@0    = ~Full version (ToB required)~
+@0    = ~Full Version~
 @1    = ~Tashia~
 @2    = ~When asked about her past, a sad expression darkens Tashia's pale face for a moment. She tells you that she was born somewhere in the vicinity of Ten-Towns in the north, uncertain what her parents were doing so far away from other elven settlements. Her childhood home was destroyed along with the entire city of Targos when a powerful spellcaster terrorized Icewind Dale back when she was just a child. With both her parents dead, she was only able to stay alive at the time due to kindness of strangers, many of whom lost their loved ones as well. She mentions growing up in a foster home with five other children who ended up adventuring together exploring lands south of Ten-Towns, and eventually south of Spine of the World as well. It was in the city of Neverwinter where she met Arilistan, a young human Kensai whom she fell in love with. She mentions the events surrounding the next few years with tragic sadness in her voice, talking about how they adventured together farther along the Sword Coast, then suddenly stops, explaining that she already said too much. You notice tears forming in her deep jade eyes just before she turns away and resumes her journey.~
 
@@ -264,10 +264,10 @@ Summons Peanelian, a spirit leopard once a day to fight at caster's side for a s
 @288  = ~You give Tashia a quick kiss on the lips, reminding her that you still care.  Aww, how sweet!~
 @289  = ~Moving gently but surely you hug Tashia tightly and give her a quick yet passionate kiss, leaving her standing wide-eyed and speechless there for a moment!~
 @290  = ~Peanelian's claws~
-@291  = ~SoA only version~
+@291  = ~SoA-Only Version~
 
-@300 = ~Tashia Add-On Pack by Bri and Lord Ernie~
-@301 = ~Action Style Dialogues~
+@300 = ~Tashia Add-On Pack (by Bri and Lord Ernie)~
+@301 = ~Action-Style Dialogues~
 @302 = ~Baldurized Dialogues~
 @303 = ~Tashia NPC Mod~
 @304 = ~Tashia's Winter Cloak~
@@ -287,10 +287,12 @@ STATISTICS:
 @309 = ~Shopkeeper~
 @310 = ~Tashia's body~
 @311 = ~Tashia was captured by Bodhi and infected with vampirism, forcing you to slay her. There may be some way to revive her, though you don't know what it would be.~
-@312 = ~You don't appear to have Tashia's ToB version installed. Install it first before installing this expansion pack.~
+@312 = ~Tashia's full version required. Install it before this expansion pack.~
 @313 = ~Belmin Gergas~
 @314 = ~Cowled Enforcer~
 @315 = ~Casts Polymorph Other - Belmin Gergas~
-@316 = ~Tashia's Alternate Portrait 1 - Created by Amalthea~
+@316 = ~Tashia's Alternate Portrait 1 (by Amalthea)~
 @317 = ~Tashia's Alternate Portrait 2~
-@318 = ~Alternate portrait for Tashia~
+@318 = ~Alternate Portrait for Tashia~
+@319 = ~Unsupported game.~
+@320 = ~Tashia's main component required.~
