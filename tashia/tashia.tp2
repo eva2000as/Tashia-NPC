@@ -3,8 +3,8 @@ BACKUP ~weidu_external/tashia/backup~
 SUPPORT ~https://github.com/Spellhold-Studios/Tashia-NPC~
 VERSION ~v1.5 RC1~
 
-README ~tashia/tra/%LANGUAGE%/readme.htm~
-       ~tashia/readme.htm~
+README ~tashia/tra/%LANGUAGE%/readme-tashia.html~
+       ~tashia/readme-tashia.html~
 
 ALWAYS
   ACTION_IF (!VARIABLE_IS_SET le#_always_done) BEGIN // run only once per install
