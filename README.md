@@ -28,7 +28,7 @@ Why some badges update slowly: https://github.com/pujux/badge-it/issues/78
 <br>
 
 [<img alt="Download" src="https://raw.githubusercontent.com/Spellhold-Studios/Spellhold-Studios.github.io/main/assets/buttons/download.svg" height="28">](https://github.com/Spellhold-Studios/Tashia-NPC/releases/latest)&nbsp;
-[<img alt="Readme" src="https://raw.githubusercontent.com/Spellhold-Studios/Spellhold-Studios.github.io/main/assets/buttons/readme.svg" height="28">](https://spellhold-studios.github.io/readmes/tashia-npc/readme.htm)&nbsp;
+[<img alt="Readme" src="https://raw.githubusercontent.com/Spellhold-Studios/Spellhold-Studios.github.io/main/assets/buttons/readme.svg" height="28">](https://spellhold-studios.github.io/readmes/tashia-npc/readme-tashia.html)&nbsp;
 [<img alt="Webpage" src="https://raw.githubusercontent.com/Spellhold-Studios/Spellhold-Studios.github.io/main/assets/buttons/webpage.svg" height="28">](https://spellhold-studios.github.io/)&nbsp;
 [<img alt="Discord" src="https://raw.githubusercontent.com/Spellhold-Studios/Spellhold-Studios.github.io/main/assets/buttons/discord-blue.svg" height="28">](https://discord.gg/pE2Njbdb2a)
 
@@ -38,7 +38,7 @@ Hailing from the Ten Towns region, Tashia is a young female elven sorceress. Aft
 
 Tashia is romanceable, and the mod spans both Shadows of Amn and Throne of Bhaal. She has dialogue with every NPC, plenty of non-party interactions, and three different epilogues.
 
-*Please check the complete [Readme](https://spellhold-studios.github.io/readmes/tashia-npc/readme.htm) to learn more about this mod before installation.*
+*Please check the complete [Readme](https://spellhold-studios.github.io/readmes/tashia-npc/readme-tashia.html) to learn more about this mod before installation.*
 
 ## Tashia
 
