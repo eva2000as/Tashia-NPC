@@ -9,6 +9,7 @@ THEN
         CreateCreatureObjectOffScreen("TAGIRL",Myself,0,0,0)
         CreateCreatureObject("TAKOMT","TAGIRL",0,0,0)
         CreateCreatureObject("TATUMP","TAGIRL",0,0,0)
+        SetGlobal("SpawnedGirl","GLOBAL",1)
         MoveViewObject("TAGIRL",VERY_FAST)
         ActionOverride("TAGIRL",MoveToObject(Player1))
         ActionOverride("TAKOMT",MoveToObjectFollow("TAGIRL"))

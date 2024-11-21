@@ -4,7 +4,7 @@ IF
     See(Player1)
     Global("SawTAFamil","GLOBAL",0)
     IsValidForPartyDialog("Tashia")
-    GlobalLT("chapter","GLOBAL",8)
+    GlobalLT("chapter","GLOBAL",%bg2_chapter_8%)
 THEN
     RESPONSE #100
         FaceObject(Player1)

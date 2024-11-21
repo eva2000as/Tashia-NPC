@@ -159,13 +159,13 @@ END
 IF ~~ THEN BEGIN 27 // from: 26.1 26.0
   SAY @55 /* #74305 */
   IF ~ReputationGT(Player1,10)
-        GlobalLT("chapter","GLOBAL",4)~ THEN REPLY @56 /* #74306 */ DO ~SetGlobal("TashiaKnows","GLOBAL",2)~ GOTO 30
+        GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ THEN REPLY @56 /* #74306 */ DO ~SetGlobal("TashiaKnows","GLOBAL",2)~ GOTO 30
   IF ~ReputationGT(Player1,10)
-        GlobalGT("chapter","GLOBAL",3)~ THEN REPLY @57 /* #74307 */ DO ~SetGlobal("TashiaKnows","GLOBAL",2)~ GOTO 30
+        GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)~ THEN REPLY @57 /* #74307 */ DO ~SetGlobal("TashiaKnows","GLOBAL",2)~ GOTO 30
   IF ~ReputationGT(Player1,10)
-        GlobalLT("chapter","GLOBAL",4)~ THEN REPLY @58 /* #74306 */ DO ~SetGlobal("TashiaKnows","GLOBAL",2)~ GOTO 30
+        GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ THEN REPLY @58 /* #74306 */ DO ~SetGlobal("TashiaKnows","GLOBAL",2)~ GOTO 30
   IF ~ReputationGT(Player1,10)
-        GlobalGT("chapter","GLOBAL",3)~ THEN REPLY @59 /* #74307 */ DO ~SetGlobal("TashiaKnows","GLOBAL",2)~ GOTO 30
+        GlobalGT("chapter","GLOBAL",%bg2_chapter_3%)~ THEN REPLY @59 /* #74307 */ DO ~SetGlobal("TashiaKnows","GLOBAL",2)~ GOTO 30
   IF ~ReputationLT(Player1,11)~ THEN REPLY @60 /* #74308 */ DO ~SetGlobal("TashiaKnows","GLOBAL",2)~ GOTO 28
   IF ~~ THEN REPLY @61 /* #74309 */ GOTO 28
 END
@@ -1755,7 +1755,7 @@ END
 
 IF ~~ THEN BEGIN 281 // from: 280.0
   SAY @543 /* #74749 */
-  IF ~~ THEN EXTERN ~PLAYER1~ add2
+COPY_TRANS player1 33
 END
 
 IF ~~ THEN BEGIN salv3
@@ -1876,23 +1876,16 @@ SetGlobal("HadPeopleBeforeHell","LOCALS",1)~ EXTERN ~btashia~ add201
 END
 
 EXTEND_BOTTOM player1 33
-  IF ~IsValidForPartyDialog("Tashia") !Global("TashiaRomanceActive","GLOBAL",2) Global("M#TashiTalk1","LOCALS",0)~ THEN DO ~SetGlobal("M#TashiTalkPlayer1_1","LOCALS",1)~ EXTERN ~player1~ add1
+  IF ~IsValidForPartyDialog("Tashia") !Global("TashiaRomanceActive","GLOBAL",2) Global("M#TashiTalkPlayer1_1","LOCALS",0)~ THEN DO ~SetGlobal("M#TashiTalkPlayer1_1","LOCALS",1)~ EXTERN ~player1~ add1
+END
+
+EXTEND_BOTTOM player1 33
+  IF ~IsValidForPartyDialog("Tashia") Global("TashiaRomanceActive","GLOBAL",2) Global("M#TashiTalkPlayer1_5","LOCALS",0)~ THEN DO ~SetGlobal("M#TashiTalkPlayer1_5","LOCALS",1)~ EXTERN ~player1~ add3
 END
 
 ADD_TRANS_TRIGGER helljon 7 ~!IsValidForPartyDialog("Tashia")~
 EXTEND_TOP helljon 7 #1
   IF ~IsValidForPartyDialog("Tashia") Global("M#TashiTalkPlayer1_4","LOCALS",0)~ THEN DO ~SetGlobal("M#TashiTalkPlayer1_4","LOCALS",1)~ EXTERN ~BTASHIA~ 282
-END
-
-REPLACE player1
-  IF ~~ THEN BEGIN 53
-    SAY @566
-    IF ~OR(2)
-!InParty("Tashia")
-!Global("TashiaRomanceActive","GLOBAL",2)~ THEN EXTERN ~player1~ add2
-    IF ~InParty("Tashia") !Dead("Tashia") 
-Global("TashiaRomanceActive","GLOBAL",2)~ THEN EXTERN ~player1~ add3
-  END
 END
 
 CHAIN ~KELDORJ~ kelcer1
@@ -2152,11 +2145,6 @@ APPEND player1
     IF ~~ THEN REPLY @672 EXTERN BTASHIA 273
     IF ~~ THEN REPLY @673 EXTERN BTASHIA 273
     IF ~~ THEN REPLY @674 EXTERN BTASHIA 273
-  END
-
-  IF ~~ THEN BEGIN add2
-    SAY @675
-    IF ~~ THEN EXIT
   END
 
   IF ~~ THEN BEGIN add3

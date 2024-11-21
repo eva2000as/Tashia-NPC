@@ -211,8 +211,8 @@ END
 
 IF ~~ THEN BEGIN 20 // from: 19.0
   SAY @69 /* #74193 */
-  IF ~GlobalLT("chapter","GLOBAL",4)~ THEN REPLY @70 /* #74211 */ GOTO 21
-  IF ~GlobalLT("chapter","GLOBAL",7)~ THEN REPLY @71 /* #58674 */ GOTO 21
+  IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)~ THEN REPLY @70 /* #74211 */ GOTO 21
+  IF ~GlobalLT("chapter","GLOBAL",%bg2_chapter_7%)~ THEN REPLY @71 /* #58674 */ GOTO 21
   IF ~~ THEN REPLY @72 GOTO 22
 END
 

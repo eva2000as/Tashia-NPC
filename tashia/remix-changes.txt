@@ -1,0 +1,31 @@
+------------------- Changes from the original (POSSIBLE SPOILERS) -----------------------
+
+Note: If you have never played Tashia before, you may wish to skip this section since some of it is spoiler-ish in nature.
+
+The first thing you will notice is that much of Arian's Tashia has remained unchanged in our Remix version. That said, there are a number of changes we have incorporated.
+
+1. Changes are for both Shadows of Amn, and Throne of Bhaal. You won't have to wait 6 months for the next module.
+
+2. New lovetalks! You will notice what we have two slightly different versions, what we tentatively called Baldurized and Non-Baldurized. When I first wrote the various lovetalks, they were heavy on action and other changes. (Some of you may even remember them when they were posted in the general forum). This set we term Non-Baldurized.
+
+However, we also realized that delivery can be off-putting to those who wish their mods to meld as seamlessly as possible with the original Baldur's Gate 2 game. As a result, we have the 'Baldurized' lovetalks. Almost all the action has been removed, and conforms more to the standard Baldur's Gate 2 style.
+
+3. Tashia now has more banters with each NPC in the core BG 2 game. Expanding on what Arian wrote, she now is guaranteed 2 banters per NPC in SoA, and 2 banters per NPC in ToB.
+
+4. Tashia now has a few situational comments in the game as well (depending on the place and location). Additionally, Tashia has a few special interactions with some of the background characters.
+
+5. We removed Arian's flirt system, and put in a new one akin to the Flirtpack. However, I admit flirts weren't my strong suit
+
+6. There are now riddles in ToB! Tashia was known for the riddles you could ask her, a feature which was sadly lacking in ToB.
+
+7. A Bodhi abduction has been added to Tashia, a key-feature of the BG 2 romances.
+
+8. Removal of lich lovetalk. There was a dialogue in which Tashia essentially turns into a lich which questions the Player. We removed this as it didn't make sense in context with the rest of the module.
+
+9. Alteration of item lovetalk. There was an 'original' lovetalk in which Tashia mentions several items specifically by name...items she would have no prior knowledge of (such as the hammer Crom Fayr). This dialogue was altered to give her less of an "Out of Character" feel.
+
+10. There have been some changes made to the Master Wraith dialogue in Throne of Bhaal. Nothing too extensive, though.
+
+11. Most items in the final, Arilistan battle have been made undroppable to remove the 'Monty Haul' aspect of that encounter.
+
+12. We are including a few new pictures you may wish to use for Tashia. However, the original picture of Tashia is still the default.
