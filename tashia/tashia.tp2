@@ -603,7 +603,7 @@ APPEND ~npclevel.2da~
 
 BEGIN @301 LABEL ~le#-Tashia-Action-Dialogues~
 SUBCOMPONENT @300
-REQUIRE_PREDICATE (MOD_IS_INSTALLED ~setup-tashia.tp2~ (ID_OF_LABEL ~setup-tashia.tp2~ ~le#-Tashia-Full~)) @312
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~tashia.tp2~ (ID_OF_LABEL ~tashia.tp2~ ~le#-Tashia-Full~)) @312
 
 // Adding Dialogue state
 
@@ -695,7 +695,7 @@ SAY NAME2 @314
 
 BEGIN @302 LABEL ~le#-Tashia-Baldurized-Dialogues~
 SUBCOMPONENT @300
-REQUIRE_PREDICATE (MOD_IS_INSTALLED ~setup-tashia.tp2~ (ID_OF_LABEL ~setup-tashia.tp2~ ~le#-Tashia-Full~)) @312
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~tashia.tp2~ (ID_OF_LABEL ~tashia.tp2~ ~le#-Tashia-Full~)) @312
 
 // Adding Dialogue state
 
