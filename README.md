@@ -90,6 +90,11 @@ Tashia is romanceable, and the mod spans both Shadows of Amn and Throne of Bhaal
 - Sarah Hamilton &nbsp;&ndash;&nbsp; soundset (voice of April Ryan from the game *The Longest Journey* by Funcom)
 - Amalthea (Antonio Montenegro) &nbsp;&ndash;&nbsp; original portrait
 
+**Music**
+
+- "Under the Oaks" by Elven
+- "Drum, Pipe and Dance" by Elven
+
 **Translators**  
 
 - **French**:&nbsp; Yoho
@@ -97,11 +102,6 @@ Tashia is romanceable, and the mod spans both Shadows of Amn and Throne of Bhaal
 - **Italian**:&nbsp; al17, Hellspawn
 - **Russian**:&nbsp; yota13
 - **Spanish**:&nbsp; Bhasbuto, Immortality, Atoan
-
-**Music**
-
-- "Under the Oaks" by Elven
-- "Drum, Pipe and Dance" by Elven
 
 **Special Thanks and Acknowledgments from Bri**
 
