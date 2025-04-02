@@ -56,7 +56,7 @@ Tashia is romanceable, and the mod spans both Shadows of Amn and Throne of Bhaal
 </picture>
 
 |  Ability  | Score |
-| :-------- | :---- |
+| :-------: | :---: |
 | STR       | 11    |
 | DEX       | 19    |
 | CON       | 15    |
