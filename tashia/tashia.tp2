@@ -73,6 +73,10 @@ LANGUAGE ~Russian (translation by ArtBersercer, aerie.ru, and yota13)~
          ~russian~
          ~tashia/tra/english/wsetup.tra~
          ~tashia/tra/russian/wsetup.tra~
+		 
+LANGUAGE ~Schinese(translation by anca_qin, fix by eva2000as)~
+         ~schinese~
+		 ~tashia/tra/schinese/wsetup.tra~   
 
 /* outdated translations
 LANGUAGE ~Deutsch (Uebersetzung von Maus)~
@@ -325,11 +329,16 @@ COPY ~tashia/Media/tashend3.2da~ ~override/tashend3.2da~
   REPLACE ~187678~ @105
 
 // Pretend scripts
-EXTEND_TOP ~player1d.bcs~ ~tashia/Scripts/tashia1d.bcs~ EVALUATE_BUFFER
-EXTEND_TOP ~ar2010.bcs~ ~tashia/Scripts/tash2010.bcs~ EVALUATE_BUFFER
-EXTEND_TOP ~ar4500.bcs~ ~tashia/Scripts/tash4500.bcs~ EVALUATE_BUFFER
-EXTEND_TOP ~ar6200.bcs~ ~tashia/Scripts/tash6200.bcs~ EVALUATE_BUFFER
-EXTEND_BOTTOM ~cut218g.bcs~ ~tashia/Scripts/tcut218g.bcs~ EVALUATE_BUFFER
+EXTEND_TOP ~player1d.bcs~ ~tashia/Scripts/tashia1d.bcs~
+ EVALUATE_BUFFER
+EXTEND_TOP ~ar2010.bcs~ ~tashia/Scripts/tash2010.bcs~
+ EVALUATE_BUFFER
+EXTEND_TOP ~ar4500.bcs~ ~tashia/Scripts/tash4500.bcs~
+ EVALUATE_BUFFER
+EXTEND_TOP ~ar6200.bcs~ ~tashia/Scripts/tash6200.bcs~
+ EVALUATE_BUFFER
+EXTEND_BOTTOM ~cut218g.bcs~ ~tashia/Scripts/tcut218g.bcs~
+ EVALUATE_BUFFER
 
 // Append Tashia NPC dialogs to the games 2da files
 
@@ -378,7 +387,7 @@ LAF HANDLE_AUDIO END
 APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
   UNLESS ~CD_STATE_NOTVALID~
 
-// Voraussetzungen für die Installation
+// Voraussetzungen fé»µ die Installation
 
 APPEND ~TRIGGER.IDS~ ~0x40DB InWatchersKeep()~
   UNLESS ~0x40DB InWatchersKeep()~
@@ -576,8 +585,10 @@ COPY ~tashia/Media/tashend3.2da~ ~override/tashend3.2da~
   REPLACE ~187678~ @105
 
 // Pretend scripts
-EXTEND_TOP ~player1d.bcs~ ~tashia/Scripts/tashia1d.bcs~ EVALUATE_BUFFER
-EXTEND_TOP ~ar2010.bcs~ ~tashia/Scripts/tash2010.bcs~ EVALUATE_BUFFER
+EXTEND_TOP ~player1d.bcs~ ~tashia/Scripts/tashia1d.bcs~
+ EVALUATE_BUFFER
+EXTEND_TOP ~ar2010.bcs~ ~tashia/Scripts/tash2010.bcs~
+ EVALUATE_BUFFER
 
 // Append Tashia NPC dialogs to the games 2da files
 
@@ -644,17 +655,23 @@ COMPILE EVALUATE_BUFFER ~Tashia\update\scripts\TashiaD.baf~
 COMPILE EVALUATE_BUFFER ~Tashia\update\scripts\LE#vtash.baf~
 COMPILE EVALUATE_BUFFER ~Tashia\update\scripts\LE#vai.baf~
 
-EXTEND_TOP ~Tashia.bcs~ ~Tashia\update\scripts\LE#Tashia.baf~ EVALUATE_BUFFER
-EXTEND_TOP ~Tash25.bcs~ ~Tashia\update\scripts\LE#Tash25.baf~ EVALUATE_BUFFER
-EXTEND_TOP ~Tashi25d.bcs~ ~Tashia\update\scripts\LE#Tash25D.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~Tashia.bcs~ ~Tashia\update\scripts\LE#Tashia.baf~
+ EVALUATE_BUFFER
+EXTEND_TOP ~Tash25.bcs~ ~Tashia\update\scripts\LE#Tash25.baf~
+ EVALUATE_BUFFER
+EXTEND_TOP ~Tashi25d.bcs~ ~Tashia\update\scripts\LE#Tash25D.baf~
+ EVALUATE_BUFFER
 
 COPY_EXISTING ~AR0713.are~ ~override~
  WRITE_ASCII 0x94 ~AR0713~
 BUT_ONLY_IF_IT_CHANGES
 
-EXTEND_BOTTOM ~ar0713.bcs~ ~Tashia\update\scripts\LE#AR0713.baf~ EVALUATE_BUFFER
-EXTEND_BOTTOM ~ar0809.bcs~ ~Tashia\update\scripts\LE#AR0809.baf~ EVALUATE_BUFFER
-EXTEND_BOTTOM ~cleanse.bcs~ ~Tashia\update\scripts\LE#Cleanse.baf~ EVALUATE_BUFFER
+EXTEND_BOTTOM ~ar0713.bcs~ ~Tashia\update\scripts\LE#AR0713.baf~
+ EVALUATE_BUFFER
+EXTEND_BOTTOM ~ar0809.bcs~ ~Tashia\update\scripts\LE#AR0809.baf~
+ EVALUATE_BUFFER
+EXTEND_BOTTOM ~cleanse.bcs~ ~Tashia\update\scripts\LE#Cleanse.baf~
+ EVALUATE_BUFFER
 
 // Cutscenes
 
@@ -737,17 +754,23 @@ COMPILE EVALUATE_BUFFER ~Tashia\update\scripts\TashiaD.baf~
 COMPILE EVALUATE_BUFFER ~Tashia\update\scripts\LE#vtash.baf~
 COMPILE EVALUATE_BUFFER ~Tashia\update\scripts\LE#vai.baf~
 
-EXTEND_TOP ~Tashia.bcs~ ~Tashia\update\scripts\LE#TashiaN.baf~ EVALUATE_BUFFER
-EXTEND_TOP ~Tash25.bcs~ ~Tashia\update\scripts\LE#Tash25.baf~ EVALUATE_BUFFER
-EXTEND_TOP ~Tashi25d.bcs~ ~Tashia\update\scripts\LE#Tash25D.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~Tashia.bcs~ ~Tashia\update\scripts\LE#TashiaN.baf~
+ EVALUATE_BUFFER
+EXTEND_TOP ~Tash25.bcs~ ~Tashia\update\scripts\LE#Tash25.baf~
+ EVALUATE_BUFFER
+EXTEND_TOP ~Tashi25d.bcs~ ~Tashia\update\scripts\LE#Tash25D.baf~
+ EVALUATE_BUFFER
 
 COPY_EXISTING ~AR0713.are~ ~override~
  WRITE_ASCII 0x94 ~AR0713~
 BUT_ONLY_IF_IT_CHANGES
 
-EXTEND_BOTTOM ~ar0713.bcs~ ~Tashia\update\scripts\LE#AR0713.baf~ EVALUATE_BUFFER
-EXTEND_BOTTOM ~ar0809.bcs~ ~Tashia\update\scripts\LE#AR0809.baf~ EVALUATE_BUFFER
-EXTEND_BOTTOM ~cleanse.bcs~ ~Tashia\update\scripts\LE#Cleanse.baf~ EVALUATE_BUFFER
+EXTEND_BOTTOM ~ar0713.bcs~ ~Tashia\update\scripts\LE#AR0713.baf~
+ EVALUATE_BUFFER
+EXTEND_BOTTOM ~ar0809.bcs~ ~Tashia\update\scripts\LE#AR0809.baf~
+ EVALUATE_BUFFER
+EXTEND_BOTTOM ~cleanse.bcs~ ~Tashia\update\scripts\LE#Cleanse.baf~
+ EVALUATE_BUFFER
 
 // Cutscenes
 
